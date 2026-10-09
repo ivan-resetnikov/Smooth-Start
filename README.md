@@ -23,11 +23,6 @@ There are ways to improve the game's performance, most notably through mods. But
 I wanted to make it easier for my brothers to get a smooth gaming experience on their weak laptops without having to wrestle with all that setup.
 
 
-## Build and run
-
-_TODO(vanya): A screenshot, GIF, short video, and/or a terminal session._
-
-
 ## (Building,) installation and usage
 
 _TODO(vanya): Exact dependencies, commands, configuration, and expected output._
