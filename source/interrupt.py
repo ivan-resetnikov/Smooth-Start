@@ -253,7 +253,7 @@ def watch_new_processes(new_process_cb: Callable) -> None:
                     with open(f"/proc/{pid}/cmdline", "rb") as f:
                         cmdline = f.read().replace(b"\0", b" ").decode(
                             errors="replace"
-                        )
+                        ).strip()
 
                     new_process_cb(pid, cmdline)
                 
@@ -268,6 +268,7 @@ def pause_process(pid: int) -> None:
     if sys.platform == "win32":
         print(f"Pausing PID {pid} (NtSuspendProcess)")
 
+        # PERF(vanya): Reloading the dll's every call like that is a little wasteful.
         process = ctypes.WinDLL("kernel32", use_last_error=True)
 
         PROCESS_SUSPEND_RESUME = 0x0800
@@ -293,6 +294,7 @@ def resume_process(pid: int) -> None:
     if sys.platform == "win32":
         print(f"Pausing PID {pid} (NtResumeProcess)")
 
+        # PERF(vanya): Reloading the dll's every call like that is a little wasteful.
         process = ctypes.WinDLL("kernel32", use_last_error=True)
 
         PROCESS_SUSPEND_RESUME = 0x0800
