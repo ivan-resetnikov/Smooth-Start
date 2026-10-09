@@ -1,0 +1,3 @@
+# NOTE(vanya): This file...
+# Installs many preformance mods and shaders for the given minecarft version and the loader type
+
