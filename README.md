@@ -1,6 +1,7 @@
-# Automatic Minecraft Optimization Mods Downloader
+# Smooth Start
+> Automatic Minecraft Performance Installer
 
-_TODO(vanya): One line description_
+A tool that automatically sets up Minecraft performance mods and shaders, across game versions, mod loaders, and different launchers.
 
 
 ## Demonstation
